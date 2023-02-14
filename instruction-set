@@ -1,0 +1,6 @@
+16 bit instructions
+First 4 bits is the instruction ID
+Last 12 bits is the address or value
+
+
+
