@@ -1,0 +1,44 @@
+16 bit instructions
+First  byte is the instruction ID
+Second byte is the address or value
+
+Assembler Syntax:
+A-OUT   B-IN          0xFF
+ROM-OUT RAM-ADDR-U-IN 0x02 ; This is a comment
+
+Out Commands:
+ROM-OUT  ; outputs rom value to bus
+ALU-OUT  ; outputs value from ALU
+C-OUT    ; outputs value from C register
+D-OUT    ; outputs value from D register
+RAM-OUT  ; outputs value from RAM
+NAND-OUT ; outputs bitwise NAND operation
+AND-OUT  ; outputs bitwise AND operation
+NOT-OUT  ; outputs bitwise NOT operation
+F-OUT    ; outputs nothing
+
+Store/In Commands:
+A-IN          ; stores value from bus onto A register
+B-IN          ; stores value into B register
+C-IN          ; stores value into C register
+D-IN          ; stores value into D register
+RAM-ADDR-L-IN ; stores value into lower RAM address register
+RAM-ADDR-U-IN ; stores value into upper RAM address register
+RAM-IN        ; stores value into RAM
+JMP           ; jumps to ROM address in ROM address register
+JC            ; jumps on carry
+OUTPUT-IN     ; stores value into output register
+ROM-ADDR-L-IN ; stores value into lower ROM address register
+ROM-ADDR-U-IN ; stores value into upper ROM address register
+FLAGS-IN      ; stores value into flags register
+JZ            ; jumps if bus value is zero
+F-IN          ; stores nothing
+
+Flags:
+LSB: subtract signal
+
+
+
+
+
+
