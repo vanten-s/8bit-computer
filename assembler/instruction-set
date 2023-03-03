@@ -20,6 +20,7 @@ AND-OUT  ; outputs bitwise AND operation
 NOT-OUT  ; outputs bitwise NOT operation
 INST-H-O ; outputs higher part of instruction counter
 INST-L-O ; outputs lower part of instruction counter
+INPUT-O  ; outputs input
 F-OUT    ; outputs nothing
 
 Store/In Commands:

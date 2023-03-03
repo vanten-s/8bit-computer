@@ -36,6 +36,7 @@ ALU-OUT RAM-IN        0xFF
 ; Has to be this
 
 SE-OUT  C-IN          0xFF ; Store top address in C register
+ROM-OUT RAM-IN        0x00 ; Store 0 in RAM
 
 ROM-OUT FLAGS-IN      0x80 ; Pop the top element of the stack
 SE-OUT  A-IN          0xFF ; Fetch SE

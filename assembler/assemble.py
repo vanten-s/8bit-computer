@@ -14,7 +14,8 @@ OUT_COMMANDS = {
         "AND-OUT":  0xB,
         "INST-H-O": 0xC,
         "INST-L-O": 0xD,
-        "F-OUT":    0xf,
+        "INPUT-O":  0xE,
+        "F-OUT":    0xF,
 }
 
 IN_COMMANDS = {

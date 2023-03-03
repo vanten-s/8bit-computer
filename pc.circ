@@ -287,7 +287,7 @@
     </comp>
     <comp lib="0" loc="(1180,2420)" name="Tunnel">
       <a name="facing" val="east"/>
-      <a name="label" val="SSO"/>
+      <a name="label" val="SSE"/>
       <a name="labelfont" val="Source Code Pro ExtraLight bold 10"/>
     </comp>
     <comp lib="0" loc="(1180,880)" name="Tunnel">
@@ -397,7 +397,7 @@
     </comp>
     <comp lib="0" loc="(1200,2450)" name="Tunnel">
       <a name="facing" val="south"/>
-      <a name="label" val="SOO"/>
+      <a name="label" val="SEO"/>
       <a name="labelfont" val="Source Code Pro ExtraLight bold 10"/>
     </comp>
     <comp lib="0" loc="(1200,760)" name="Tunnel">
@@ -513,7 +513,7 @@
       <a name="labelfont" val="Source Code Pro ExtraLight bold 10"/>
     </comp>
     <comp lib="0" loc="(1670,220)" name="Tunnel">
-      <a name="label" val="SSO"/>
+      <a name="label" val="SSE"/>
       <a name="labelfont" val="Source Code Pro ExtraLight bold 10"/>
     </comp>
     <comp lib="0" loc="(1670,240)" name="Tunnel">
@@ -585,7 +585,7 @@
       <a name="labelfont" val="Source Code Pro ExtraLight bold 10"/>
     </comp>
     <comp lib="0" loc="(1670,620)" name="Tunnel">
-      <a name="label" val="SOO"/>
+      <a name="label" val="SEO"/>
       <a name="labelfont" val="Source Code Pro ExtraLight bold 10"/>
     </comp>
     <comp lib="0" loc="(1670,640)" name="Tunnel">
@@ -610,6 +610,10 @@
     </comp>
     <comp lib="0" loc="(1670,740)" name="Tunnel">
       <a name="label" val="INSTRLO"/>
+      <a name="labelfont" val="Source Code Pro ExtraLight bold 10"/>
+    </comp>
+    <comp lib="0" loc="(1670,760)" name="Tunnel">
+      <a name="label" val="IO"/>
       <a name="labelfont" val="Source Code Pro ExtraLight bold 10"/>
     </comp>
     <comp lib="0" loc="(170,680)" name="Tunnel">
@@ -757,6 +761,12 @@
       <a name="label" val="CLK"/>
       <a name="labelfont" val="Source Code Pro ExtraLight bold 10"/>
     </comp>
+    <comp lib="0" loc="(750,1310)" name="Splitter">
+      <a name="appear" val="center"/>
+      <a name="facing" val="west"/>
+      <a name="fanout" val="8"/>
+      <a name="incoming" val="8"/>
+    </comp>
     <comp lib="0" loc="(850,1140)" name="Tunnel">
       <a name="facing" val="north"/>
       <a name="label" val="INSTRHO"/>
@@ -765,6 +775,11 @@
     <comp lib="0" loc="(850,1230)" name="Tunnel">
       <a name="facing" val="north"/>
       <a name="label" val="INSTRLO"/>
+      <a name="labelfont" val="Source Code Pro ExtraLight bold 10"/>
+    </comp>
+    <comp lib="0" loc="(850,1320)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="IO"/>
       <a name="labelfont" val="Source Code Pro ExtraLight bold 10"/>
     </comp>
     <comp lib="0" loc="(930,310)" name="Probe">
@@ -783,6 +798,11 @@
       <a name="incoming" val="8"/>
     </comp>
     <comp lib="0" loc="(940,1220)" name="Splitter">
+      <a name="appear" val="center"/>
+      <a name="fanout" val="8"/>
+      <a name="incoming" val="8"/>
+    </comp>
+    <comp lib="0" loc="(940,1310)" name="Splitter">
       <a name="appear" val="center"/>
       <a name="fanout" val="8"/>
       <a name="incoming" val="8"/>
@@ -867,6 +887,9 @@
     <comp lib="1" loc="(860,1220)" name="Controlled Buffer">
       <a name="width" val="8"/>
     </comp>
+    <comp lib="1" loc="(860,1310)" name="Controlled Buffer">
+      <a name="width" val="8"/>
+    </comp>
     <comp lib="1" loc="(880,640)" name="NOR Gate">
       <a name="facing" val="west"/>
       <a name="inputs" val="8"/>
@@ -902,6 +925,9 @@ ff48 80e2 ff07 112 ff33 ffd4 ff9f
     <comp lib="5" loc="(520,440)" name="7-Segment Display"/>
     <comp lib="5" loc="(570,440)" name="7-Segment Display"/>
     <comp lib="5" loc="(620,440)" name="7-Segment Display"/>
+    <comp lib="5" loc="(680,1260)" name="DipSwitch">
+      <a name="facing" val="east"/>
+    </comp>
     <comp lib="8" loc="(1515,800)" name="Text">
       <a name="text" val="ALU"/>
     </comp>
@@ -933,7 +959,7 @@ ff48 80e2 ff07 112 ff33 ffd4 ff9f
       <a name="label" val="StackPointer"/>
     </comp>
     <comp loc="(1330,2390)" name="EightBitRegstr">
-      <a name="label" val="StackOffset"/>
+      <a name="label" val="StackEnd"/>
     </comp>
     <comp loc="(1330,870)" name="EightBitRegstr">
       <a name="label" val="ARegister"/>
@@ -1242,7 +1268,7 @@ ff48 80e2 ff07 112 ff33 ffd4 ff9f
     <wire from="(1140,1400)" to="(1190,1400)"/>
     <wire from="(1140,1490)" to="(1220,1490)"/>
     <wire from="(1140,1580)" to="(1220,1580)"/>
-    <wire from="(1140,1670)" to="(1570,1670)"/>
+    <wire from="(1140,1670)" to="(1460,1670)"/>
     <wire from="(1140,1760)" to="(1190,1760)"/>
     <wire from="(1140,1850)" to="(1220,1850)"/>
     <wire from="(1140,1940)" to="(1220,1940)"/>
@@ -1361,6 +1387,8 @@ ff48 80e2 ff07 112 ff33 ffd4 ff9f
     <wire from="(1450,980)" to="(1460,980)"/>
     <wire from="(1460,1420)" to="(1460,1490)"/>
     <wire from="(1460,1420)" to="(1530,1420)"/>
+    <wire from="(1460,1500)" to="(1460,1670)"/>
+    <wire from="(1460,1500)" to="(1580,1500)"/>
     <wire from="(1460,870)" to="(1510,870)"/>
     <wire from="(1470,900)" to="(1510,900)"/>
     <wire from="(1480,840)" to="(1510,840)"/>
@@ -1381,8 +1409,6 @@ ff48 80e2 ff07 112 ff33 ffd4 ff9f
     <wire from="(1560,430)" to="(1560,780)"/>
     <wire from="(1560,960)" to="(1580,960)"/>
     <wire from="(1560,970)" to="(1580,970)"/>
-    <wire from="(1570,1500)" to="(1570,1670)"/>
-    <wire from="(1570,1500)" to="(1580,1500)"/>
     <wire from="(1570,320)" to="(1570,410)"/>
     <wire from="(1570,320)" to="(1610,320)"/>
     <wire from="(1570,420)" to="(1570,640)"/>
@@ -1418,6 +1444,7 @@ ff48 80e2 ff07 112 ff33 ffd4 ff9f
     <wire from="(1630,700)" to="(1670,700)"/>
     <wire from="(1630,720)" to="(1670,720)"/>
     <wire from="(1630,740)" to="(1670,740)"/>
+    <wire from="(1630,760)" to="(1670,760)"/>
     <wire from="(1640,810)" to="(1640,1010)"/>
     <wire from="(170,680)" to="(190,680)"/>
     <wire from="(1820,1500)" to="(1880,1500)"/>
@@ -1467,6 +1494,14 @@ ff48 80e2 ff07 112 ff33 ffd4 ff9f
     <wire from="(670,360)" to="(670,930)"/>
     <wire from="(670,360)" to="(930,360)"/>
     <wire from="(670,950)" to="(800,950)"/>
+    <wire from="(680,1270)" to="(730,1270)"/>
+    <wire from="(680,1280)" to="(730,1280)"/>
+    <wire from="(680,1290)" to="(730,1290)"/>
+    <wire from="(680,1300)" to="(730,1300)"/>
+    <wire from="(680,1310)" to="(730,1310)"/>
+    <wire from="(680,1320)" to="(730,1320)"/>
+    <wire from="(680,1330)" to="(730,1330)"/>
+    <wire from="(680,1340)" to="(730,1340)"/>
     <wire from="(680,630)" to="(680,820)"/>
     <wire from="(680,630)" to="(720,630)"/>
     <wire from="(680,820)" to="(1580,820)"/>
@@ -1477,6 +1512,7 @@ ff48 80e2 ff07 112 ff33 ffd4 ff9f
     <wire from="(710,640)" to="(880,640)"/>
     <wire from="(730,660)" to="(760,660)"/>
     <wire from="(740,740)" to="(760,740)"/>
+    <wire from="(750,1310)" to="(840,1310)"/>
     <wire from="(750,560)" to="(770,560)"/>
     <wire from="(750,620)" to="(780,620)"/>
     <wire from="(750,750)" to="(750,800)"/>
@@ -1491,6 +1527,7 @@ ff48 80e2 ff07 112 ff33 ffd4 ff9f
     <wire from="(800,950)" to="(800,1130)"/>
     <wire from="(860,1130)" to="(940,1130)"/>
     <wire from="(860,1220)" to="(940,1220)"/>
+    <wire from="(860,1310)" to="(940,1310)"/>
     <wire from="(900,730)" to="(930,730)"/>
     <wire from="(900,770)" to="(900,950)"/>
     <wire from="(900,770)" to="(920,770)"/>
@@ -1544,6 +1581,14 @@ ff48 80e2 ff07 112 ff33 ffd4 ff9f
     <wire from="(960,1230)" to="(1010,1230)"/>
     <wire from="(960,1240)" to="(1000,1240)"/>
     <wire from="(960,1250)" to="(990,1250)"/>
+    <wire from="(960,1270)" to="(1060,1270)"/>
+    <wire from="(960,1280)" to="(1050,1280)"/>
+    <wire from="(960,1290)" to="(1040,1290)"/>
+    <wire from="(960,1300)" to="(1030,1300)"/>
+    <wire from="(960,1310)" to="(1020,1310)"/>
+    <wire from="(960,1320)" to="(1010,1320)"/>
+    <wire from="(960,1330)" to="(1000,1330)"/>
+    <wire from="(960,1340)" to="(990,1340)"/>
     <wire from="(960,710)" to="(1570,710)"/>
     <wire from="(960,710)" to="(960,760)"/>
     <wire from="(960,830)" to="(1060,830)"/>
