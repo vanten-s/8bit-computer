@@ -1,12 +1,12 @@
 
 ROM-OUT SP-IN 0x20 ; Stack pointer start address register
-ROM-OUT SO-IN 0x20 ; Stack pointer end address register
+ROM-OUT SE-IN 0x20 ; Stack pointer end address register
 
 ; Jump to add
 
-SO-OUT  A-IN  0xFF ; Fetch SO
+SE-OUT  A-IN  0xFF ; Fetch SE
 ROM-OUT B-IN  0x01 ; Add 1
-ALU-OUT SO-IN 0xFF ; Store
+ALU-OUT SE-IN 0xFF ; Store
 
 ALU-OUT RAM-ADDR-U-IN 0xFF ; Store in RAM address
 ROM-OUT RAM-IN $after ; Store address of after label in ram
@@ -35,12 +35,12 @@ ALU-OUT RAM-IN        0xFF
 
 ; Has to be this
 
-SO-OUT  C-IN          0xFF ; Store top address in C register
+SE-OUT  C-IN          0xFF ; Store top address in C register
 
 ROM-OUT FLAGS-IN      0x80 ; Pop the top element of the stack
-SO-OUT  A-IN          0xFF ; Fetch SO
+SE-OUT  A-IN          0xFF ; Fetch SE
 ROM-OUT B-IN          0x01 ; Subtract one
-ALU-OUT SO-IN         0xFF ; Store in SO
+ALU-OUT SE-IN         0xFF ; Store in SE
 
 C-OUT   ROM-ADDR-U-IN 0xFF ; Jump back
 F-OUT   JMP           0xFF
