@@ -29,8 +29,18 @@ ROM-OUT B-IN          0xC1    ; Add C1 in order to Detect things
 F-OUT   JC            0xFF    ; Jump to Y increment if carry
 
 mainloop:
-ROM-OUT OUTPUT-IN     0x0E    ; Select Color
-ROM-OUT OUTPUT-IN     0x0E+64 
+ROM-OUT RAM-ADDR-U-IN 0x00    ; Fetch X position
+RAM-OUT A-IN          0xFF
+ROM-OUT RAM-ADDR-U-IN 0x01    ; Fetch Y position
+RAM-OUT B-IN          0xFF
+
+ALU-OUT C-IN          0x0E    ; Select Color
+C-OUT   OUTPUT-IN     0xFF    ; Add color
+
+; Clock the clock
+C-OUT   A-IN          0xFF
+ROM-OUT B-IN            64
+ALU-OUT OUTPUT-IN     0xFF
 
 ROM-OUT RAM-ADDR-U-IN 0x01    ; Select Y position
 RAM-OUT OUTPUT-IN     0xFF    ; Output
