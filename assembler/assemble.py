@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 
 import sys
 
@@ -7,7 +8,7 @@ OUT_COMMANDS = {
         "C-OUT":    0x4,
         "D-OUT":    0x5,
         "SP-OUT":   0x6,
-        "SO-OUT":   0x7,
+        "SE-OUT":   0x7,
         "RAM-OUT":  0x8,
         "NAND-OUT": 0x9,
         "NOT-OUT":  0xA,
@@ -22,7 +23,7 @@ IN_COMMANDS = {
         "A-IN":          0x0,
         "B-IN":          0x1,
         "SP-IN":         0x2,
-        "SO-IN":         0x3,
+        "SE-IN":         0x3,
         "C-IN":          0x4,
         "D-IN":          0x5,
         "RAM-ADDR-L-IN": 0x6,
@@ -60,15 +61,13 @@ def parse( line: str ):
     out_command = OUT_COMMANDS[ words[0] ]
     in_command  = IN_COMMANDS [ words[1] ]
     try:
-        value       = eval( words[2] )
+        value   = eval( words[2] )
 
     except SyntaxError:
         pass
 
     if words[2].startswith( "$" ):
         value = labels[ words[2][1:] ]
-
-    print(value)
 
     instruction = b""
     instruction += value.to_bytes                            ( 1, 'big' )
@@ -107,8 +106,6 @@ while i < len( lines ):
 
     else:
         i += 1
-
-print( "\n".join( lines ) )
 
 out = b""
 for line in lines:

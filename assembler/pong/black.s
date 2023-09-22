@@ -16,6 +16,9 @@ ROM-OUT RAM-ADDR-U-IN 0x01    ; Fetch Y position
 RAM-OUT A-IN          0xFF    ; 
 ROM-OUT B-IN          0x01    ; Add 1
 ALU-OUT RAM-IN        0xFF    ; Store in Y position
+ROM-OUT ROM-ADDR-U-IN $end
+ROM-OUT B-IN          256-63
+F-OUT   JC            0xFF
 ROM-OUT ROM-ADDR-U-IN $mainloop 
 F-OUT   JMP           0xFF    ; Jump back
 
@@ -29,18 +32,7 @@ ROM-OUT B-IN          0xC1    ; Add C1 in order to Detect things
 F-OUT   JC            0xFF    ; Jump to Y increment if carry
 
 mainloop:
-ROM-OUT RAM-ADDR-U-IN 0x01    ; Fetch Y position
-RAM-OUT B-IN          0xFF
-ROM-OUT A-IN          0b100   ; And Y position to wait a bit
-AND-OUT B-IN          0XFF
-
-ROM-OUT RAM-ADDR-U-IN 0x00    ; Fetch X position
-RAM-OUT A-IN          0xFF
-
-ALU-OUT A-IN          0xFF    ; And result and the color bits
-ROM-OUT B-IN          0b100   ; User selects bits
-
-AND-OUT C-IN          0x0E    ; Select Color
+ROM-OUT C-IN          0x00    ; Select Color
 C-OUT   OUTPUT-IN     0xFF    ; Add color
 
 ; Clock the clock
@@ -65,5 +57,4 @@ ROM-OUT OUTPUT-IN     0x00    ; Clock the displays clock
 
 ROM-OUT ROM-ADDR-U-IN $inc_x  
 F-OUT   JMP           0xFF    ; Jump back to inc_x
-
 
